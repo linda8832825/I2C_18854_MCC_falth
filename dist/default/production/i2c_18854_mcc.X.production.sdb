@@ -1,0 +1,311 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F18854 ]
+[d frameptr 6 ]
+"6 C:\Users\linda\MPLABXProjects\i2c_18854_mcc.X/I2C_LCD.c
+[v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
+"36
+[v _I2C_Master_Wait I2C_Master_Wait `(v  1 e 1 0 ]
+"49
+[v _I2C_Master_Start I2C_Master_Start `(v  1 e 1 0 ]
+"57
+[v _I2C_Master_Stop I2C_Master_Stop `(v  1 e 1 0 ]
+"71
+[v _I2C_Master_Write I2C_Master_Write `(uc  1 e 1 0 ]
+"89
+[v _LCD_Init LCD_Init `(v  1 e 1 0 ]
+"110
+[v _IO_Expander_Write IO_Expander_Write `(v  1 e 1 0 ]
+"117
+[v _LCD_Write_4Bit LCD_Write_4Bit `(v  1 e 1 0 ]
+"124
+[v _LCD_CMD LCD_CMD `(v  1 e 1 0 ]
+"129
+[v _LCD_Write_Char LCD_Write_Char `(v  1 e 1 0 ]
+"134
+[v _LCD_Write_String LCD_Write_String `(v  1 e 1 0 ]
+"138
+[v _LCD_Set_Cursor LCD_Set_Cursor `(v  1 e 1 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c99\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"5 C:\Users\linda\MPLABXProjects\i2c_18854_mcc.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"50 C:\Users\linda\MPLABXProjects\i2c_18854_mcc.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"57
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"71
+[v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
+"55 C:\Users\linda\MPLABXProjects\i2c_18854_mcc.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"3 C:\Users\linda\MPLABXProjects\i2c_18854_mcc.X/I2C_LCD.c
+[v _RS RS `uc  1 e 1 0 ]
+[v _i2c_add i2c_add `uc  1 e 1 0 ]
+[v _BackLight_State BackLight_State `uc  1 e 1 0 ]
+[s S205 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+"402 C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\pic\include\proc\pic16f18854.h
+[u S214 . 1 `S205 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES214  1 e 1 @12 ]
+"592
+[v _TRISA TRISA `VEuc  1 e 1 @17 ]
+[s S175 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+`uc 1 TRISA6 1 0 :1:6 
+`uc 1 TRISA7 1 0 :1:7 
+]
+"609
+[u S184 . 1 `S175 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES184  1 e 1 @17 ]
+"654
+[v _TRISB TRISB `VEuc  1 e 1 @18 ]
+"716
+[v _TRISC TRISC `VEuc  1 e 1 @19 ]
+"778
+[v _LATA LATA `VEuc  1 e 1 @22 ]
+"840
+[v _LATB LATB `VEuc  1 e 1 @23 ]
+"902
+[v _LATC LATC `VEuc  1 e 1 @24 ]
+"4349
+[v _SSP1BUF SSP1BUF `VEuc  1 e 1 @396 ]
+"4369
+[v _SSP1ADD SSP1ADD `VEuc  1 e 1 @397 ]
+"4559
+[v _SSP1STAT SSP1STAT `VEuc  1 e 1 @399 ]
+"4923
+[v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @400 ]
+"5043
+[v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @401 ]
+[s S79 . 1 `uc 1 SEN 1 0 :1:0 
+`uc 1 RSEN 1 0 :1:1 
+`uc 1 PEN 1 0 :1:2 
+`uc 1 RCEN 1 0 :1:3 
+`uc 1 ACKEN 1 0 :1:4 
+`uc 1 ACKDT 1 0 :1:5 
+`uc 1 ACKSTAT 1 0 :1:6 
+`uc 1 GCEN 1 0 :1:7 
+]
+"5090
+[s S88 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 ADMSK 1 0 :5:1 
+]
+[s S91 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 ADMSK1 1 0 :1:1 
+`uc 1 ADMSK2 1 0 :1:2 
+`uc 1 ADMSK3 1 0 :1:3 
+`uc 1 ADMSK4 1 0 :1:4 
+`uc 1 ADMSK5 1 0 :1:5 
+]
+[s S98 . 1 `uc 1 SEN1 1 0 :1:0 
+`uc 1 ADMSK11 1 0 :1:1 
+`uc 1 ADMSK21 1 0 :1:2 
+`uc 1 ADMSK31 1 0 :1:3 
+`uc 1 ACKEN1 1 0 :1:4 
+`uc 1 ACKDT1 1 0 :1:5 
+`uc 1 ACKSTAT1 1 0 :1:6 
+`uc 1 GCEN1 1 0 :1:7 
+]
+[s S107 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 RSEN1 1 0 :1:1 
+`uc 1 PEN1 1 0 :1:2 
+`uc 1 RCEN1 1 0 :1:3 
+`uc 1 ADMSK41 1 0 :1:4 
+`uc 1 ADMSK51 1 0 :1:5 
+]
+[u S114 . 1 `S79 1 . 1 0 `S88 1 . 1 0 `S91 1 . 1 0 `S98 1 . 1 0 `S107 1 . 1 0 ]
+[v _SSP1CON2bits SSP1CON2bits `VES114  1 e 1 @401 ]
+"21890
+[v _PMD0 PMD0 `VEuc  1 e 1 @1942 ]
+"21947
+[v _PMD1 PMD1 `VEuc  1 e 1 @1943 ]
+"22018
+[v _PMD2 PMD2 `VEuc  1 e 1 @1944 ]
+"22063
+[v _PMD3 PMD3 `VEuc  1 e 1 @1945 ]
+"22119
+[v _PMD4 PMD4 `VEuc  1 e 1 @1946 ]
+"22170
+[v _PMD5 PMD5 `VEuc  1 e 1 @1947 ]
+"23241
+[v _OSCCON1 OSCCON1 `VEuc  1 e 1 @2189 ]
+"23381
+[v _OSCCON3 OSCCON3 `VEuc  1 e 1 @2191 ]
+"23478
+[v _OSCEN OSCEN `VEuc  1 e 1 @2193 ]
+"23529
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @2194 ]
+"23587
+[v _OSCFRQ OSCFRQ `VEuc  1 e 1 @2195 ]
+"32728
+[v _ANSELA ANSELA `VEuc  1 e 1 @3896 ]
+"32790
+[v _WPUA WPUA `VEuc  1 e 1 @3897 ]
+"32852
+[v _ODCONA ODCONA `VEuc  1 e 1 @3898 ]
+"32914
+[v _SLRCONA SLRCONA `VEuc  1 e 1 @3899 ]
+"32976
+[v _INLVLA INLVLA `VEuc  1 e 1 @3900 ]
+"33348
+[v _ANSELB ANSELB `VEuc  1 e 1 @3907 ]
+"33410
+[v _WPUB WPUB `VEuc  1 e 1 @3908 ]
+"33472
+[v _ODCONB ODCONB `VEuc  1 e 1 @3909 ]
+"33534
+[v _SLRCONB SLRCONB `VEuc  1 e 1 @3910 ]
+"33596
+[v _INLVLB INLVLB `VEuc  1 e 1 @3911 ]
+"33968
+[v _ANSELC ANSELC `VEuc  1 e 1 @3918 ]
+"34030
+[v _WPUC WPUC `VEuc  1 e 1 @3919 ]
+"34092
+[v _ODCONC ODCONC `VEuc  1 e 1 @3920 ]
+"34154
+[v _SLRCONC SLRCONC `VEuc  1 e 1 @3921 ]
+"34216
+[v _INLVLC INLVLC `VEuc  1 e 1 @3922 ]
+"34588
+[v _WPUE WPUE `VEuc  1 e 1 @3941 ]
+"34609
+[v _INLVLE INLVLE `VEuc  1 e 1 @3944 ]
+"41285
+"41285
+[v _SSP1IF SSP1IF `VEb  1 e 0 @14456 ]
+"42503
+[v _TRISC3 TRISC3 `VEb  1 e 0 @155 ]
+"42506
+[v _TRISC4 TRISC4 `VEb  1 e 0 @156 ]
+"5 C:\Users\linda\MPLABXProjects\i2c_18854_mcc.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"23
+} 0
+"50 C:\Users\linda\MPLABXProjects\i2c_18854_mcc.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"55
+} 0
+"71
+[v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
+{
+"85
+} 0
+"55 C:\Users\linda\MPLABXProjects\i2c_18854_mcc.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"114
+} 0
+"57 C:\Users\linda\MPLABXProjects\i2c_18854_mcc.X\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"69
+} 0
+"134 C:\Users\linda\MPLABXProjects\i2c_18854_mcc.X/I2C_LCD.c
+[v _LCD_Write_String LCD_Write_String `(v  1 e 1 0 ]
+{
+"135
+[v LCD_Write_String@i i `i  1 a 2 9 ]
+"134
+[v LCD_Write_String@Str Str `*.25uc  1 p 2 6 ]
+"137
+} 0
+"129
+[v _LCD_Write_Char LCD_Write_Char `(v  1 e 1 0 ]
+{
+[v LCD_Write_Char@Data Data `uc  1 a 1 wreg ]
+[v LCD_Write_Char@Data Data `uc  1 a 1 wreg ]
+[v LCD_Write_Char@Data Data `uc  1 a 1 5 ]
+"133
+} 0
+"138
+[v _LCD_Set_Cursor LCD_Set_Cursor `(v  1 e 1 0 ]
+{
+[v LCD_Set_Cursor@ROW ROW `uc  1 a 1 wreg ]
+[v LCD_Set_Cursor@ROW ROW `uc  1 a 1 wreg ]
+[v LCD_Set_Cursor@COL COL `uc  1 p 1 6 ]
+[v LCD_Set_Cursor@ROW ROW `uc  1 a 1 9 ]
+"153
+} 0
+"89
+[v _LCD_Init LCD_Init `(v  1 e 1 0 ]
+{
+[v LCD_Init@I2C_Add I2C_Add `uc  1 a 1 wreg ]
+[v LCD_Init@I2C_Add I2C_Add `uc  1 a 1 wreg ]
+[v LCD_Init@I2C_Add I2C_Add `uc  1 a 1 7 ]
+"109
+} 0
+"124
+[v _LCD_CMD LCD_CMD `(v  1 e 1 0 ]
+{
+[v LCD_CMD@CMD CMD `uc  1 a 1 wreg ]
+[v LCD_CMD@CMD CMD `uc  1 a 1 wreg ]
+[v LCD_CMD@CMD CMD `uc  1 a 1 5 ]
+"128
+} 0
+"117
+[v _LCD_Write_4Bit LCD_Write_4Bit `(v  1 e 1 0 ]
+{
+[v LCD_Write_4Bit@Nibble Nibble `uc  1 a 1 wreg ]
+[v LCD_Write_4Bit@Nibble Nibble `uc  1 a 1 wreg ]
+"119
+[v LCD_Write_4Bit@Nibble Nibble `uc  1 a 1 3 ]
+"123
+} 0
+"110
+[v _IO_Expander_Write IO_Expander_Write `(v  1 e 1 0 ]
+{
+[v IO_Expander_Write@Data Data `uc  1 a 1 wreg ]
+[v IO_Expander_Write@Data Data `uc  1 a 1 wreg ]
+"112
+[v IO_Expander_Write@Data Data `uc  1 a 1 1 ]
+"116
+} 0
+"71
+[v _I2C_Master_Write I2C_Master_Write `(uc  1 e 1 0 ]
+{
+[v I2C_Master_Write@data data `uc  1 a 1 wreg ]
+[v I2C_Master_Write@data data `uc  1 a 1 wreg ]
+[v I2C_Master_Write@data data `uc  1 a 1 0 ]
+"77
+} 0
+"57
+[v _I2C_Master_Stop I2C_Master_Stop `(v  1 e 1 0 ]
+{
+"60
+} 0
+"49
+[v _I2C_Master_Start I2C_Master_Start `(v  1 e 1 0 ]
+{
+"52
+} 0
+"36
+[v _I2C_Master_Wait I2C_Master_Wait `(v  1 e 1 0 ]
+{
+"48
+} 0
+"6
+[v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
+{
+"35
+} 0
