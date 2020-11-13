@@ -1679,8 +1679,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./I2C_LCD.c: 23:     SSP1STAT = 0x00;
 [e = _SSP1STAT -> -> 0 `i `uc ]
 "32
-[; ;./I2C_LCD.c: 32:     SSP1ADD = ((1000000 *4)/100000) - 1;
-[e = _SSP1ADD -> - / * -> 1000000 `l -> -> 4 `i `l -> 100000 `l -> -> 1 `i `l `uc ]
+[; ;./I2C_LCD.c: 32:     SSP1ADD = (((0x4E | 0x01)*4)/(1000000));
+[e = _SSP1ADD -> / -> * | -> 78 `i -> 1 `i -> 4 `i `l -> 1000000 `l `uc ]
 "33
 [; ;./I2C_LCD.c: 33:     TRISC3 = 1;
 [e = _TRISC3 -> -> 1 `i `b ]

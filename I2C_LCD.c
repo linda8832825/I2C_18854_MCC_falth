@@ -29,7 +29,7 @@ void I2C_Master_Init(){
                      //bit2(R/W : 讀/寫位信息)=0=0 =發送不在進行中將該位與SEN，RSEN，PEN，RCEN或ACKEN進行或運算，將指示是否 MSSP處於空閒模式。
                      //bit0(BF： Buffer Full Status bit) = 0 = 接收未完成，SSPxBUF為空 = 數據發送完成（不包括ACK和stop bit），SSPxBUF為空
     
-    SSP1ADD = ((_XTAL_FREQ *4)/I2C_BaudRate) - 1; //設定SCL的CLOCK
+    SSP1ADD = (((0x4E | 0x01)*4)/(_XTAL_FREQ)); //設定SCL的CLOCK
     SCL_D = 1;//設定SCL的腳位初始為1
     SDA_D = 1;//設定SDA的腳位初始為1
 }

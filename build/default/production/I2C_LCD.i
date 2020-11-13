@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "I2C_LCD.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,9 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 1 "./mcc_generated_files/mcc.h" 1
-# 49 "./mcc_generated_files/mcc.h"
+# 1 "I2C_LCD.c" 2
 # 1 "C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -19749,63 +19747,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\\pic\\include\\xc.h" 2 3
-# 49 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/device_config.h" 1
-# 50 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/pin_manager.h" 1
-# 78 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-# 90 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_IOC(void);
-# 51 "./mcc_generated_files/mcc.h" 2
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\stdbool.h" 1 3
-# 53 "./mcc_generated_files/mcc.h" 2
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\conio.h" 1 3
-
-
-
-
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\errno.h" 1 3
-# 10 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\errno.h" 3
-extern int errno;
-# 8 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\conio.h" 2 3
-
-# 1 "C:/Users/linda/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.5.133/xc8\\pic\\include\\__null.h" 1 3
-# 9 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c99\\conio.h" 2 3
-
-
-
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-
-
-extern char * cgets(char *);
-extern void cputs(const char *);
-# 54 "./mcc_generated_files/mcc.h" 2
-# 69 "./mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
-# 82 "./mcc_generated_files/mcc.h"
-void OSCILLATOR_Initialize(void);
-# 95 "./mcc_generated_files/mcc.h"
-void PMD_Initialize(void);
-# 1 "main.c" 2
-
-# 1 "./I2C_LCD.c" 1
+# 1 "I2C_LCD.c" 2
 
 # 1 "./I2C_LCD.h" 1
 # 27 "./I2C_LCD.h"
@@ -19831,7 +19773,7 @@ void noBacklight();
 void LCD_SR();
 void LCD_SL();
 void LCD_Clear();
-# 2 "./I2C_LCD.c" 2
+# 2 "I2C_LCD.c" 2
 
 unsigned char RS, i2c_add, BackLight_State = 0x08;
 
@@ -19844,16 +19786,16 @@ void I2C_Master_Init(){
 
 
     SSP1CON2 = 0x00;
-# 23 "./I2C_LCD.c"
+# 23 "I2C_LCD.c"
     SSP1STAT = 0x00;
-# 32 "./I2C_LCD.c"
-    SSP1ADD = (((0x4E | 0x01)*4)/(1000000));
+# 32 "I2C_LCD.c"
+    SSP1ADD = (((0x4E | 0x01)*4)/(_XTAL_FREQ));
     TRISC3 = 1;
     TRISC4 = 1;
 }
 void I2C_Master_Wait(){
   while ((SSP1STAT & 0x04) || (SSP1CON2 & 0x1F));
-# 48 "./I2C_LCD.c"
+# 48 "I2C_LCD.c"
 }
 void I2C_Master_Start(){
   I2C_Master_Wait();
@@ -19898,23 +19840,23 @@ unsigned char I2C_Read_Byte(void){
 void LCD_Init(unsigned char I2C_Add){
   i2c_add = I2C_Add;
   IO_Expander_Write(0x00);
-  _delay((unsigned long)((30)*(1000000/4000.0)));
+  _delay((unsigned long)((30)*(_XTAL_FREQ/4000.0)));
   LCD_CMD(0x03);
-  _delay((unsigned long)((5)*(1000000/4000.0)));
+  _delay((unsigned long)((5)*(_XTAL_FREQ/4000.0)));
   LCD_CMD(0x03);
-  _delay((unsigned long)((5)*(1000000/4000.0)));
+  _delay((unsigned long)((5)*(_XTAL_FREQ/4000.0)));
   LCD_CMD(0x03);
-  _delay((unsigned long)((5)*(1000000/4000.0)));
+  _delay((unsigned long)((5)*(_XTAL_FREQ/4000.0)));
   LCD_CMD(0x02);
-  _delay((unsigned long)((5)*(1000000/4000.0)));
+  _delay((unsigned long)((5)*(_XTAL_FREQ/4000.0)));
   LCD_CMD(0x20 | (2 << 2));
-  _delay((unsigned long)((50)*(1000000/4000.0)));
+  _delay((unsigned long)((50)*(_XTAL_FREQ/4000.0)));
   LCD_CMD(0x0C);
-  _delay((unsigned long)((50)*(1000000/4000.0)));
+  _delay((unsigned long)((50)*(_XTAL_FREQ/4000.0)));
   LCD_CMD(0x01);
-  _delay((unsigned long)((50)*(1000000/4000.0)));
+  _delay((unsigned long)((50)*(_XTAL_FREQ/4000.0)));
   LCD_CMD(0x04 | 0x02);
-  _delay((unsigned long)((50)*(1000000/4000.0)));
+  _delay((unsigned long)((50)*(_XTAL_FREQ/4000.0)));
 }
 void IO_Expander_Write(unsigned char Data)
 {
@@ -19928,7 +19870,7 @@ void LCD_Write_4Bit(unsigned char Nibble){
   Nibble |= RS;
   IO_Expander_Write(Nibble | 0x04);
   IO_Expander_Write(Nibble & 0xFB);
-  _delay((unsigned long)((50)*(1000000/4000000.0)));
+  _delay((unsigned long)((50)*(_XTAL_FREQ/4000000.0)));
 }
 void LCD_CMD(unsigned char CMD){
   RS = 0;
@@ -19970,61 +19912,13 @@ void noBacklight(){
 }
 void LCD_SL(){
   LCD_CMD(0x18);
-  _delay((unsigned long)((40)*(1000000/4000000.0)));
+  _delay((unsigned long)((40)*(_XTAL_FREQ/4000000.0)));
 }
 void LCD_SR(){
   LCD_CMD(0x1C);
-  _delay((unsigned long)((40)*(1000000/4000000.0)));
+  _delay((unsigned long)((40)*(_XTAL_FREQ/4000000.0)));
 }
 void LCD_Clear(){
   LCD_CMD(0x01);
-  _delay((unsigned long)((40)*(1000000/4000000.0)));
-}
-# 2 "main.c" 2
-
-
-# 1 "./I2C_LCD.h" 1
-# 27 "./I2C_LCD.h"
-void I2C_Master_Init();
-void I2C_Master_Wait();
-void I2C_Master_Start();
-void I2C_Master_RepeatedStart();
-void I2C_Master_Stop();
-void I2C_ACK();
-void I2C_NACK();
-unsigned char I2C_Master_Write(unsigned char data);
-unsigned char I2C_Read_Byte(void);
-
-void LCD_Init(unsigned char I2C_Add);
-void IO_Expander_Write(unsigned char Data);
-void LCD_Write_4Bit(unsigned char Nibble);
-void LCD_CMD(unsigned char CMD);
-void LCD_Set_Cursor(unsigned char ROW, unsigned char COL);
-void LCD_Write_Char(char);
-void LCD_Write_String(char*);
-void Backlight();
-void noBacklight();
-void LCD_SR();
-void LCD_SL();
-void LCD_Clear();
-# 4 "main.c" 2
-
-void main(void)
-{
-    SYSTEM_Initialize();
-    TRISAbits.TRISA1=0;
-    I2C_Master_Init();
-    LCD_Init(0x4E);
-    while (1)
-    {
-        PORTAbits.RA1=0;
-        _delay((unsigned long)((1000)*(1000000/4000.0)));
-        PORTAbits.RA1=1;
-        _delay((unsigned long)((1000)*(1000000/4000.0)));
-        LCD_Set_Cursor(1, 1);
-        LCD_Write_String(" Khaled Magdy");
-        LCD_Set_Cursor(2, 1);
-        LCD_Write_String(" DeepBlue");
-    }
-        return;
+  _delay((unsigned long)((40)*(_XTAL_FREQ/4000000.0)));
 }
